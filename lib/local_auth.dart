@@ -10,7 +10,7 @@ class LocalAuth {
     try {
       if (!await _canAuth()) return false;
       return await _auth.authenticate(
-        localizedReason: 'Confirma tu identidad',
+        localizedReason: 'Confirma tu Identidad',
       );
     } catch (e) {
       print(e);
