@@ -1,53 +1,127 @@
 # Autenticación Biométrica con Flutter
 
 ## Autor
-**Jose Luis Curiel López**  
-📧 **Correo:** joselcl04@gmail.com  
-🌐 **GitHub:** [github.com/JoseCuriel04](https://github.com/JoseCuriel04)
 
----
+**Jose Luis Curiel López**\
+📧 **Correo:** joselcl04@gmail.com\
+🌐 **GitHub:**
+[github.com/JoseCuriel04](https://github.com/JoseCuriel04)
+
+------------------------------------------------------------------------
 
 ## Descripción del Proyecto
 
-Este proyecto implementa un sistema de **autenticación biométrica** en Flutter, utilizando el paquete oficial [`local_auth`](https://pub.dev/packages/local_auth).  
-El objetivo es ofrecer una experiencia de inicio de sesión más **rápida, moderna y segura**, permitiendo que los usuarios accedan mediante **huella digital o reconocimiento facial**, sin necesidad de ingresar usuario o contraseña.
+Este proyecto implementa un sistema de **autenticación biométrica** en
+Flutter, utilizando el paquete oficial `local_auth`. También incluye un
+sistema de **registro y validación de usuarios** mediante
+`SharedPreferences` para almacenar credenciales de manera persistente.
 
-El enfoque principal es mejorar la **usabilidad** y **seguridad** de las aplicaciones móviles, integrando métodos de autenticación nativos disponibles tanto en **Android** como en **iOS**.
+El objetivo es ofrecer un inicio de sesión **rápido, seguro y moderno**,
+permitiendo autenticación por **huella digital, reconocimiento facial o
+usuario y contraseña**.
 
----
+------------------------------------------------------------------------
 
-## Funcionalidades Principales
+## 🌟 Funcionalidades Principales
 
-- 🔒 **Inicio de sesión biométrico:** permite autenticar al usuario usando huella dactilar o rostro.  
-- ⚙️ **Detección automática:** el sistema identifica qué tipo de autenticación biométrica admite el dispositivo.  
-- 🧩 **Integración sencilla:** puede añadirse a cualquier aplicación Flutter ya existente.  
-- 🪄 **Experiencia de usuario fluida:** elimina la necesidad de recordar contraseñas.  
-- 📱 **Compatibilidad:** soporta Android (Fingerprint / Face Unlock) y iOS (Touch ID / Face ID).
+-   🔒 **Inicio de sesión biométrico** (huella digital / rostro).
+-   📝 **Registro de usuarios** con almacenamiento persistente.
+-   🔍 **Validación de credenciales**.
+-   ⚠️ **Mensajes de error claros y amigables**.
+-   🧩 **Fácil integración** en cualquier app Flutter.
+-   📱 **Compatibilidad con Android e iOS**.
 
----
+------------------------------------------------------------------------
 
-## Tecnologías Utilizadas
+## 📂 Estructura del Proyecto
 
-- **Lenguaje:** Dart  
-- **Framework:** Flutter  
-- **Paquete principal:** [`local_auth`](https://pub.dev/packages/local_auth)  
-- **IDE recomendado:** Android Studio / VS Code
+    lib/
+    ├── main.dart                  # Punto de entrada de la aplicación
+    ├── home_screen.dart           # Pantalla de inicio de sesión
+    ├── register_screen.dart       # Pantalla de registro
+    ├── profile_screen.dart        # Pantalla del perfil del usuario
+    ├── user_manager.dart          # Manejo de usuarios con SharedPreferences
+    └── local_auth.dart            # Lógica de autenticación biométrica
 
----
+------------------------------------------------------------------------
 
-## Consideraciones
+## 🛠️ Tecnologías Utilizadas
 
-- Es necesario que el dispositivo tenga **hardware biométrico** disponible (sensor de huella o cámara compatible).  
-- En Android, se requiere habilitar el uso de autenticación biométrica en el `AndroidManifest.xml`.  
-- En iOS, deben configurarse permisos en el archivo `Info.plist`.
+-   **Dart**
+-   **Flutter**
+-   **Paquetes:**
+    -   local_auth
+    -   shared_preferences
+-   **IDE recomendado:** VS Code o Android Studio
 
----
+------------------------------------------------------------------------
 
-## Conclusión
+## 📱 Requisitos y Configuración
 
-Este desarrollo demuestra la integración de **autenticación biométrica** en Flutter como una alternativa moderna a los sistemas tradicionales de usuario y contraseña.  
-Su implementación mejora la seguridad y facilita la interacción del usuario con la aplicación, ofreciendo una experiencia confiable, rápida y sin fricción.
+### Android
 
----
+Agrega en `AndroidManifest.xml`:
+
+``` xml
+<uses-permission android:name="android.permission.USE_BIOMETRIC" />
+<uses-permission android:name="android.permission.USE_FINGERPRINT" />
+```
+
+### iOS
+
+Agrega en `Info.plist`:
+
+``` xml
+<key>NSFaceIDUsageDescription</key>
+<string>Necesitamos tu rostro para autenticación</string>
+```
+
+------------------------------------------------------------------------
+
+## 💡 Consideraciones
+
+-   El dispositivo debe tener hardware biométrico disponible.
+-   SharedPreferences **no cifra** los datos. Para mayor seguridad, usa
+    `flutter_secure_storage`.
+-   Este proyecto sirve como base para apps reales que requieran
+    seguridad biométrica.
+
+------------------------------------------------------------------------
+
+## 🚀 Cómo Usar el Proyecto
+
+### 1. Clonar el repositorio:
+
+``` bash
+git clone https://github.com/JoseCuriel04/app_Biometric.git
+```
+
+### 2. Instalar dependencias:
+
+``` bash
+flutter pub get
+```
+
+### 3. Ejecutar la app:
+
+``` bash
+flutter run
+```
+
+### 4. Probar funcionalidades:
+
+-   Registrarse
+-   Iniciar sesión con usuario/contraseña o biometría
+-   Ver el perfil del usuario
+
+------------------------------------------------------------------------
+
+## 🎯 Conclusión
+
+Este proyecto demuestra cómo integrar autenticación biométrica y
+registro de usuarios en Flutter de forma sencilla y eficiente,
+ofreciendo una experiencia moderna y segura.
+
+------------------------------------------------------------------------
 
 © 2025 - **Jose Luis Curiel López**
